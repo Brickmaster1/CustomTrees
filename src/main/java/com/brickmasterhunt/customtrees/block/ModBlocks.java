@@ -22,14 +22,9 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, customtrees.MOD_ID);
-
-    public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),
-            CreativeModeTab.TAB_MISC);
-
     public static final RegistryObject<Block> CUSTOM_OAK_SAPLING = registerBlock("oak_sapling",
             () -> new SaplingBlock(new OakTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)),
-            CreativeModeTab.TAB_MISC);
+            CreativeModeTab.TAB_DECORATIONS);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

@@ -37,7 +37,7 @@ public class ModConfiguredFeatures {
                     BlockStateProvider.simple(Blocks.OAK_LOG),
                     new ForkingTrunkPlacer(3,4,6),
                     BlockStateProvider.simple(Blocks.OAK_LEAVES),
-                    new RandomSpreadFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), ConstantInt.of(5),10),
+                    new RandomSpreadFoliagePlacer(ConstantInt.of(4), ConstantInt.of(5), ConstantInt.of(3),193),
                     new TwoLayersFeatureSize(1, 0, 2)).build());
 
     public static final Holder<PlacedFeature> CUSTOM_OAK_CHECKED = PlacementUtils.register("custom_oak_checked", OAK_TREE,

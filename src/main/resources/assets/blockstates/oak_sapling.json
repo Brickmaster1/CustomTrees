@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "customtrees:block/oak_sapling"
+      "": { "model": "customtrees:block/oak_sapling" }
     }
   }
 }
