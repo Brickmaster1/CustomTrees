@@ -2,11 +2,14 @@ package com.brickmasterhunt.customtrees.block;
 
 import com.brickmasterhunt.customtrees.customtrees;
 import com.brickmasterhunt.customtrees.item.ModItems;
+import com.brickmasterhunt.customtrees.world.feature.tree.OakTreeGrower;
 import com.sun.jna.platform.win32.NTSecApi;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,7 +24,13 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, customtrees.MOD_ID);
 
     public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),
+            CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> CUSTOM_OAK_SAPLING = registerBlock("oak_sapling",
+            () -> new SaplingBlock(new OakTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)),
+            CreativeModeTab.TAB_MISC);
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
